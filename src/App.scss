@@ -4,8 +4,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: white;
+  color: #eeeeee;
   font-family: "Inter", sans-serif;
+  font-weight: 400;
   img {
     height: 100%;
     width: 100%;
@@ -13,23 +14,35 @@
   }
 }
 
+.bg {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+}
+
 .header {
   box-sizing: border-box;
   position: fixed;
   height: 80px;
-  min-width: 70vw;
-  max-width: 1000px;
+  width: 85vw;
   border-radius: 22px;
   margin-top: 16px;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  background-color: hsl(0, 0%, 9%, 95%);
+  background-color: #171717;
   border: 2px #242628 solid;
   z-index: 999;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 24px;
+  a {
+    text-decoration: none;
+    h2 {
+      font-family: "DiodeLight";
+    }
+  }
 }
 
 .main {
@@ -43,18 +56,21 @@
 }
 
 .hero {
+  display: flex;
   width: 100%;
-  font-size: 12vw;
-  padding-top: 150px;
-  margin-left: 10vw;
-  height: 70vh;
+  font-size: 11vw;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10vh;
+  height: 40vh;
+  font-family: "DiodeLight";
 }
 
 .grid {
   display: grid;
   margin: 0 auto;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 160px;
+  grid-template-rows: 200px;
   gap: 16px;
   justify-content: center;
   max-width: 1200px;
@@ -74,8 +90,6 @@
 .item {
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  border: 2px #242628 solid;
-  background-color: #171717;
   border-radius: 22px;
   display: flex;
   align-items: center;
@@ -91,6 +105,7 @@
   position: relative;
   padding: 10%;
   gap: 12%;
+  aspect-ratio: 1;
   .link {
     padding: 15%;
     display: flex;
@@ -101,16 +116,54 @@
     img {
       width: 100%;
       aspect-ratio: 1;
+      border-radius: 0;
     }
   }
 }
 
 .big {
   padding: 10px;
+  padding-top: 0;
   display: flex;
   flex-direction: column;
   justify-content: left;
-  h1 {
-    padding: 20px;
+  .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    h1 {
+      margin: 24px;
+      font-family: "DiodeLight";
+      background: transparent;
+      color: inherit;
+    }
   }
+  .preview {
+    height: 100%;
+    width: 100%;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+    iframe {
+      position: absolute;
+      top: 0;
+      pointer-events: none;
+      height: 170%;
+      width: 170%;
+      transform: scale(0.5882);
+      transform-origin: 0 0;
+      border: none;
+    }
+  }
+}
+
+@font-face {
+  font-family: "Diode";
+  src: url("/type/Diode.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "DiodeLight";
+  src: url("/type/DiodeLight.otf") format("opentype");
 }

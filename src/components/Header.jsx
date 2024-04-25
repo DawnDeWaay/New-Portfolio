@@ -1,9 +1,17 @@
-const Header = ({ toggleDarkMode }) => {
+import { motion } from "framer-motion";
+
+const Header = ({ toggleDarkMode, darkMode }) => {
   return (
-    <div className="header">
-      <h2>🦋 Don DeWaay III</h2>
-      <button onClick={toggleDarkMode}>Hi</button>
-    </div>
+    <motion.div className="header">
+      <a href="/">
+        <motion.h2 animate={{ color: darkMode ? "#eeeeee" : "#101010" }}>
+          🦋 Don DeWaay III
+        </motion.h2>
+      </a>
+      <a href="/">
+        <h2 onClick={toggleDarkMode}>Dark</h2>
+      </a>
+    </motion.div>
   );
 };
 

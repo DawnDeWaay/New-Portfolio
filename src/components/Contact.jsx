@@ -3,7 +3,17 @@ import { motion } from "framer-motion";
 
 const Contact = ({ variants }) => {
   return (
-    <Tilt className="tilt item-small" tiltMaxAngleX={8} tiltMaxAngleY={8}>
+    <Tilt
+      className="tilt item-small"
+      tiltMaxAngleX={6}
+      tiltMaxAngleY={6}
+      glareEnable={true}
+      glareMaxOpacity={0.05}
+      glareColor="#ffffff"
+      glarePosition="all"
+      glareBorderRadius="22px"
+      scale={1.02}
+    >
       <motion.div
         className="item contact"
         variants={variants}
