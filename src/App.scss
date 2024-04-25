@@ -4,9 +4,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #121113;
   color: white;
   font-family: "Inter", sans-serif;
+  img {
+    height: 100%;
+    width: 100%;
+    border-radius: 16px;
+  }
 }
 
 .header {
@@ -22,9 +26,10 @@
   background-color: hsl(0, 0%, 9%, 95%);
   border: 2px #242628 solid;
   z-index: 999;
-  div {
-    display: flex;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
 }
 
 .main {
@@ -40,9 +45,9 @@
 .hero {
   width: 100%;
   font-size: 12vw;
-  margin-top: 150px;
-  margin-bottom: 40px;
+  padding-top: 150px;
   margin-left: 10vw;
+  height: 70vh;
 }
 
 .grid {
@@ -52,34 +57,60 @@
   grid-template-rows: 160px;
   gap: 16px;
   justify-content: center;
-  width: 700px;
-  .item {
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    border: 2px #242628 solid;
-    background-color: #171717;
-    border-radius: 22px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 998;
-    height: 100%;
-  }
-  .item-1 {
+  max-width: 1200px;
+  .item-large {
     grid-column: span 4;
-    grid-row: span 2;
-    padding: 10px;
-    padding-top: 50px;
-    height: 100%;
-    width: 100%;
+    grid-row: span 3;
   }
-  .item-2 {
-    grid-column: span 1;
-    height: 100%;
-    width: 100%;
+  .item-small {
+    aspect-ratio: 1;
   }
-  .item-3 {
-    height: 100%;
-    width: 100%;
+  .item-bar {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+}
+
+.item {
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 2px #242628 solid;
+  background-color: #171717;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 998;
+  height: 100%;
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  position: relative;
+  padding: 10%;
+  gap: 12%;
+  .link {
+    padding: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    gap: 10px;
+    img {
+      width: 100%;
+      aspect-ratio: 1;
+    }
+  }
+}
+
+.big {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  h1 {
+    padding: 20px;
   }
 }

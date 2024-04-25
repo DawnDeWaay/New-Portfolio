@@ -5,23 +5,18 @@ import { useState, useEffect } from "react";
 
 function App() {
   const [darkMode, setDarkMode] = useState(() => {
-    const storedTheme = localStorage.getItem("darkMode");
-    const prefersDarkMode =
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-    return storedTheme === "dark" || prefersDarkMode ? "dark" : "light";
+    const savedDarkMode = localStorage.getItem("darkMode");
+    return savedDarkMode ? JSON.parse(savedDarkMode) : true;
   });
 
-  const toggleDarkMode = () => {
-    setDarkMode((prevMode) => (prevMode === "dark" ? "light" : "dark"));
-  };
-
   useEffect(() => {
-    localStorage.setItem("darkMode", darkMode);
-    const bodyElement = document.body;
-    bodyElement.classList.toggle("dark-theme", darkMode === "dark");
+    localStorage.setItem("darkMode", JSON.stringify(darkMode));
   }, [darkMode]);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+    console.log("hit");
+  };
 
   return (
     <>
