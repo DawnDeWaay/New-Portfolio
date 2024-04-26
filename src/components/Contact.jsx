@@ -19,6 +19,7 @@ const Contact = ({ variants }) => {
         variants={variants}
         initial="hidden"
         animate="visible"
+        transition={{ delay: Math.random() * 0.5 }}
         whileHover="hover"
       >
         <motion.a

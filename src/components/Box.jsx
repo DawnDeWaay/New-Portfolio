@@ -20,9 +20,10 @@ const Box = ({ variants, darkMode }) => {
         variants={variants}
         initial="hidden"
         animate="visible"
+        transition={{ delay: Math.random() * 0.5 }}
         whileHover="hover"
       >
-        Hi
+        Lorem
       </motion.div>
     </Tilt>
   );

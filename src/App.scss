@@ -6,11 +6,16 @@
   box-sizing: border-box;
   color: #eeeeee;
   font-family: "Inter", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
+  -webkit-font-smoothing: auto;
   img {
     height: 100%;
     width: 100%;
     border-radius: 16px;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
   }
 }
 
@@ -25,13 +30,11 @@
   box-sizing: border-box;
   position: fixed;
   height: 80px;
-  width: 85vw;
+  width: 80vw;
   border-radius: 22px;
   margin-top: 16px;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  background-color: #171717;
-  border: 2px #242628 solid;
   z-index: 999;
   display: flex;
   align-items: center;
@@ -39,8 +42,8 @@
   padding: 24px;
   a {
     text-decoration: none;
-    h2 {
-      font-family: "DiodeLight";
+    div {
+      font-size: 32px;
     }
   }
 }
@@ -49,7 +52,7 @@
   padding-left: 10vw;
   padding-right: 10vw;
   width: 100%;
-  min-height: 200vh;
+  min-height: 130vh;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -62,8 +65,9 @@
   align-items: center;
   justify-content: center;
   padding-top: 10vh;
-  height: 40vh;
+  height: 45vh;
   font-family: "DiodeLight";
+  font-weight: 400;
 }
 
 .grid {
@@ -134,7 +138,6 @@
     width: 100%;
     h1 {
       margin: 24px;
-      font-family: "DiodeLight";
       background: transparent;
       color: inherit;
     }
@@ -151,7 +154,7 @@
       pointer-events: none;
       height: 170%;
       width: 170%;
-      transform: scale(0.5882);
+      transform: scale(0.59);
       transform-origin: 0 0;
       border: none;
     }

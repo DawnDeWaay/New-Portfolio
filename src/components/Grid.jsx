@@ -1,7 +1,10 @@
 import Tilt from "react-parallax-tilt";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+
 import Contact from "./Contact.jsx";
 import Box from "./Box.jsx";
+import SiteShowcase from "./SiteShowcase.jsx";
+
 const Grid = ({ darkMode }) => {
   const variants = {
     hidden: { opacity: 0 },
@@ -10,99 +13,62 @@ const Grid = ({ darkMode }) => {
       y: 0,
       border: darkMode ? "2px #242628 solid" : "none",
       backgroundColor: darkMode ? "#171717" : "white",
+      color: darkMode ? "#eeeeee" : "#171717",
+      boxShadow: darkMode ? "none" : "0 5px 11px rgba(33,33,33,.2)",
+      delay: Math.random() * 0.5,
     },
-    hover: { opacity: 1 },
+    hover: {
+      opacity: 1,
+      boxShadow: darkMode ? "none" : "0 10px 11px rgba(33,33,33,.2)",
+    },
   };
 
   return (
     <div className="grid">
-      <Tilt
-        className="item-large"
-        tiltMaxAngleX={1}
-        tiltMaxAngleY={0.5}
-        glareEnable={true}
-        glareMaxOpacity={0.05}
-        glareColor="#ffffff"
-        glarePosition="all"
-        glareBorderRadius="22px"
-        scale={1.02}
-      >
-        <motion.div
-          key={1}
-          className="item big"
+      <AnimatePresence>
+        <SiteShowcase
           variants={variants}
-          initial="hidden"
-          animate={{
-            opacity: darkMode ? 0.9 : 1,
-            backgroundColor: darkMode ? "#171717" : "white",
-            color: darkMode ? "#eeeeee" : "#101010",
-          }}
-          whileHover="hover"
+          darkMode={darkMode}
+          name="To-Do"
+          url="https://dondewaay.github.io/To-Do/"
+        />
+        <Contact variants={variants} />
+        <Box variants={variants} darkMode={darkMode} />
+        <Box variants={variants} darkMode={darkMode} />
+        <Box variants={variants} darkMode={darkMode} />
+        <SiteShowcase
+          variants={variants}
+          darkMode={darkMode}
+          name="MultiRoll"
+          url="https://dondewaay.github.io/MultiRoll/"
+        />
+        <Box variants={variants} darkMode={darkMode} />
+        <Box variants={variants} darkMode={darkMode} />
+        <Box variants={variants} darkMode={darkMode} />
+        <Tilt
+          className="item-bar"
+          tiltMaxAngleX={6}
+          tiltMaxAngleY={3}
+          glareEnable={true}
+          glareMaxOpacity={0.05}
+          glareColor="#ffffff"
+          glarePosition="all"
+          glareBorderRadius="22px"
+          scale={1.02}
         >
           <motion.div
-            className="info"
-            animate={{
-              color: darkMode ? "#eeeeee" : "#101010",
-            }}
-          >
-            <h1>MultiRoll</h1>
-            <h1>Visit Here</h1>
-          </motion.div>
-          <div className="preview">
-            <iframe
-              loading="lazy"
-              src="https://dondewaay.github.io/MultiRoll/"
-            />
-          </div>
-        </motion.div>
-      </Tilt>
-      <Contact variants={variants} />
-      <Tilt
-        className="item-small"
-        tiltMaxAngleX={2}
-        tiltMaxAngleY={3}
-        glareEnable={true}
-        glareMaxOpacity={0.05}
-        glareColor="#ffffff"
-        glarePosition="all"
-        glareBorderRadius="22px"
-        scale={1.02}
-      >
-        <motion.div
-          key={2}
-          className="item"
-          variants={variants}
-          initial="hidden"
-          animate="visible"
-          whileHover="hover"
-        >
-          Hi
-        </motion.div>
-      </Tilt>
-      <Box variants={variants} darkMode={darkMode} />
-      <Box variants={variants} darkMode={darkMode} />
-      <Tilt
-        className="item-bar"
-        tiltMaxAngleX={6}
-        tiltMaxAngleY={3}
-        glareEnable={true}
-        glareMaxOpacity={0.05}
-        glareColor="#ffffff"
-        glarePosition="all"
-        glareBorderRadius="22px"
-        scale={1.02}
-      >
-        <motion.div
-          key={5}
-          className="item"
-          variants={variants}
-          initial="hidden"
-          animate="visible"
-          whileHover="hover"
-        >
-          Hi
-        </motion.div>
-      </Tilt>
+            key={5}
+            className="item"
+            variants={variants}
+            initial="hidden"
+            animate="visible"
+            whileHover="hover"
+          ></motion.div>
+        </Tilt>
+        <Box variants={variants} darkMode={darkMode} />
+        <Box variants={variants} darkMode={darkMode} />
+        <Box variants={variants} darkMode={darkMode} />
+      </AnimatePresence>
     </div>
   );
 };

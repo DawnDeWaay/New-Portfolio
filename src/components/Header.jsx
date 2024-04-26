@@ -2,14 +2,27 @@ import { motion } from "framer-motion";
 
 const Header = ({ toggleDarkMode, darkMode }) => {
   return (
-    <motion.div className="header">
+    <motion.div
+      className="header"
+      animate={{
+        backgroundColor: darkMode ? "#171717" : "white",
+        border: darkMode ? "2px #242628 solid" : "none",
+        boxShadow: darkMode ? "none" : "0 5px 11px rgba(33,33,33,.2)",
+        opacity: darkMode ? 0.95 : 1,
+      }}
+    >
       <a href="/">
-        <motion.h2 animate={{ color: darkMode ? "#eeeeee" : "#101010" }}>
+        <motion.div animate={{ color: darkMode ? "#eeeeee" : "#101010" }}>
           🦋 Don DeWaay III
-        </motion.h2>
+        </motion.div>
       </a>
       <a href="/">
-        <h2 onClick={toggleDarkMode}>Dark</h2>
+        <motion.div
+          onClick={toggleDarkMode}
+          animate={{ color: darkMode ? "#eeeeee" : "#101010" }}
+        >
+          Dark
+        </motion.div>
       </a>
     </motion.div>
   );
