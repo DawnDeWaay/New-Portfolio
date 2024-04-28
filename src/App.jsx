@@ -22,19 +22,22 @@ function App() {
     <>
       <AnimatePresence>
         <motion.div
+          key={999}
           className="bg"
-          initial={{ backgroundColor: darkMode ? "black" : "#eeeeee" }}
+          initial={{ backgroundColor: darkMode ? "#000000" : "#eeeeee" }}
           animate={{
-            backgroundColor: darkMode ? "black" : "#eeeeee",
-            transition: { duration: 0.5 },
+            backgroundColor: !darkMode ? "#eeeeee" : "black",
           }}
+          transition={{ duration: 0.5 }}
         />
       </AnimatePresence>
       <div className="main">
         <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
         <motion.h1
+          key="hero"
           className="hero"
           animate={{ color: darkMode ? "#eeeeee" : "#101010" }}
+          style={{ textShadow: `2px 2px ${darkMode ? "white" : "black"}` }}
         >
           Don DeWaay
         </motion.h1>

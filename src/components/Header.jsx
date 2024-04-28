@@ -13,7 +13,7 @@ const Header = ({ toggleDarkMode, darkMode }) => {
     >
       <a href="/">
         <motion.div animate={{ color: darkMode ? "#eeeeee" : "#101010" }}>
-          🦋 Don DeWaay III
+          <span style={{ fontStyle: "none" }}>🦋</span> Don DeWaay III
         </motion.div>
       </a>
       <a href="/">
@@ -21,7 +21,7 @@ const Header = ({ toggleDarkMode, darkMode }) => {
           onClick={toggleDarkMode}
           animate={{ color: darkMode ? "#eeeeee" : "#101010" }}
         >
-          Dark
+          {darkMode ? "Light" : "Dark"}
         </motion.div>
       </a>
     </motion.div>

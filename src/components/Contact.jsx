@@ -1,27 +1,10 @@
-import Tilt from "react-parallax-tilt";
+import Box from "./Box.jsx";
 import { motion } from "framer-motion";
 
-const Contact = ({ variants }) => {
+const Contact = ({ variants, darkMode }) => {
   return (
-    <Tilt
-      className="tilt item-small"
-      tiltMaxAngleX={6}
-      tiltMaxAngleY={6}
-      glareEnable={true}
-      glareMaxOpacity={0.05}
-      glareColor="#ffffff"
-      glarePosition="all"
-      glareBorderRadius="22px"
-      scale={1.02}
-    >
-      <motion.div
-        className="item contact"
-        variants={variants}
-        initial="hidden"
-        animate="visible"
-        transition={{ delay: Math.random() * 0.5 }}
-        whileHover="hover"
-      >
+    <Box variants={variants} darkMode={darkMode} row={1} col={1}>
+      <div className="contact">
         <motion.a
           className="link"
           whileHover={{
@@ -42,7 +25,7 @@ const Contact = ({ variants }) => {
           href={"https://github.com/dondewaay"}
           style={{ backgroundColor: "#2b3137" }}
         >
-          <img src="/logo/github.png" alt="" />
+          <img src="/logo/github.png" />
         </motion.a>
         <motion.a
           className="link"
@@ -66,8 +49,8 @@ const Contact = ({ variants }) => {
         >
           <img src="/logo/instagram.svg" alt="" />
         </motion.a>
-      </motion.div>
-    </Tilt>
+      </div>
+    </Box>
   );
 };
 
