@@ -48,8 +48,7 @@ const Grid = ({ darkMode }) => {
         <Box variants={variants} col={2} row={1} />
         <Box variants={variants} col={2} row={1} />
         <Box variants={variants} col={2} row={1} />
-        <Box variants={variants} col={1} row={3} />
-        <Box variants={variants} col={3} row={3} />
+        <Box variants={variants} col={3} row={2} />
         <Box variants={variants} col={2} row={1} />
         <Box variants={variants} col={2} row={1} />
         <Box variants={variants} col={2} row={1} />
