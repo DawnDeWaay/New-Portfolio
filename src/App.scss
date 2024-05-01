@@ -7,7 +7,8 @@
   color: #eeeeee;
   font-weight: 500;
   -webkit-font-smoothing: antialiased;
-  font-style: italic;
+
+  font-family: "Meqanor";
   img {
     height: 100%;
     width: 100%;
@@ -173,4 +174,9 @@
 @font-face {
   font-family: "Ogg-Regular";
   src: url("/type/Ogg-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Meqanor";
+  src: url("/type/Meqanor.otf") format("opentype")
 }
