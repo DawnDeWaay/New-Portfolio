@@ -18,6 +18,8 @@ function App() {
     setDarkMode(!darkMode);
   };
 
+  const heroText = "Don DeWaay";
+
   return (
     <>
       <AnimatePresence>
@@ -39,7 +41,7 @@ function App() {
           animate={{ color: darkMode ? "#eeeeee" : "#101010" }}
           style={{ textShadow: `2px 2px ${darkMode ? "white" : "black"}` }}
         >
-          Don DeWaay
+          {heroText}
         </motion.h1>
         <Grid darkMode={darkMode} />
       </div>

@@ -13,7 +13,7 @@ const Header = ({ toggleDarkMode, darkMode }) => {
     >
       <a href="/">
         <motion.div animate={{ color: darkMode ? "#eeeeee" : "#101010" }}>
-          <span style={{ fontStyle: "none" }}>🦋</span> Don DeWaay III
+          <span style={{ fontStyle: "normal" }}>🦋</span> Don DeWaay III
         </motion.div>
       </a>
       <a href="/">

@@ -36,22 +36,40 @@ const Grid = ({ darkMode }) => {
           url={Don}
         />
         <Contact variants={variants} darkMode={darkMode} />
-        <Box variants={variants} darkMode={darkMode} />
-        <Box variants={variants} darkMode={darkMode} col={2} row={2} />{" "}
+        <Box variants={variants} />
+        <Box variants={variants} darkMode={darkMode} col={2} row={2} />
+        <Box variants={variants} />
+        <Box variants={variants} col={2} row={1}>
+          <div className="inside">
+            <img src="/img/bear.jpeg" />
+          </div>
+        </Box>
+        <Box variants={variants}>
+          {" "}
+          <div className="inside">
+            <img src="/img/bear.jpeg" />
+          </div>
+        </Box>
+        <Box variants={variants} col={2} row={1}>
+          <div className="inside">
+            <img src="/img/bear.jpeg" />
+          </div>
+        </Box>
+
         <Embed
           variants={variants}
           darkMode={darkMode}
           name="To-Do"
           url="https://dondewaay.github.io/To-Do/"
         />
-        <Box variants={variants} col={1} row={1} />
-        <Box variants={variants} col={1} row={1} />
-        <Box variants={variants} col={1} row={1} />
+        <Box variants={variants} />
+        <Box variants={variants} />
+        <Box variants={variants} />
         <Box variants={variants} col={2} row={1} />
         <Box variants={variants} col={2} row={1} />
         <Box variants={variants} col={2} row={1} />
         <Box variants={variants} col={3} row={2} />
-        <Box variants={variants} col={2} row={1} />
+        <Box variants={variants} />
         <Box variants={variants} col={2} row={1} />
         <Box variants={variants} col={2} row={1} />
         <Embed
@@ -60,6 +78,9 @@ const Grid = ({ darkMode }) => {
           name="MultiRoll"
           url="https://dondewaay.github.io/MultiRoll/"
         />
+        <Box variants={variants} />
+        <Box variants={variants} />
+        <Box variants={variants} />
         <motion.iframe
           className="item"
           variants={variants}
@@ -78,9 +99,6 @@ const Grid = ({ darkMode }) => {
             border: "none",
           }}
         />
-        <Box variants={variants} />
-        <Box variants={variants} />
-        <Box variants={variants} />
         <Box variants={variants} />
       </AnimatePresence>
     </div>
